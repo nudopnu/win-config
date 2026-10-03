@@ -1,4 +1,4 @@
-# Windown Configuration
+# Windows Configuration
 My goto tools for Windows, managed as a [chezmoi](https://www.chezmoi.io/) repo.
 
 ## Setup

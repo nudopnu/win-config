@@ -59,11 +59,34 @@ properties:
       dependsOn:
         - powertoys
       directives:
-        description: Enable PowerToys Run with Alt+Space 
+        description: Enable PowerToys Run with Alt+Space, disable modules with global keyboard/mouse hooks
       settings:
         PowerLauncher:
           Enabled: true
           OpenPowerLauncher: "Alt+Space"
+        # These hook into every keystroke or mouse move and can make typing laggy
+        ShortcutGuide:
+          Enabled: false
+        FancyZones:
+          Enabled: false
+        AlwaysOnTop:
+          Enabled: false
+        AdvancedPaste:
+          Enabled: false
+        Workspaces:
+          Enabled: false
+        FindMyMouse:
+          Enabled: false
+        MouseHighlighter:
+          Enabled: false
+        ColorPicker:
+          Enabled: false
+        CropAndLock:
+          Enabled: false
+        MeasureTool:
+          Enabled: false
+        Peek:
+          Enabled: false
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: chezmoi
