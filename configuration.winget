@@ -1,0 +1,85 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: git
+      directives:
+        description: Install Git
+        securityContext: elevated
+      settings:
+        id: Git.Git
+        source: winget
+        ensure: Present
+
+    - resource: PSDscResources/Environment
+      id: gitPath
+      dependsOn:
+        - git
+      directives:
+        description: Add Git to PATH
+        securityContext: elevated
+      settings:
+        Name: Path
+        Value: C:\Program Files\Git\cmd
+        Path: true
+        Target: Machine
+        Ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: gsudo
+      directives:
+        description: Install gsudo
+        securityContext: elevated
+      settings:
+        id: gerardog.gsudo
+        source: winget
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: autohotkey
+      directives:
+        description: Install Autohotkey
+        securityContext: elevated
+      settings:
+        id: AutoHotkey.AutoHotkey
+        source: winget
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: powertoys
+      directives:
+        description: Install PowerToys
+      settings:
+        id: Microsoft.PowerToys
+        source: winget
+        ensure: Present
+
+    - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
+      dependsOn:
+        - powertoys
+      directives:
+        description: Enable PowerToys Run with Alt+Space 
+      settings:
+        PowerLauncher:
+          Enabled: true
+          OpenPowerLauncher: "Alt+Space"
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: chezmoi
+      directives:
+        description: chezmoi installieren
+      settings:
+        id: twpayne.chezmoi
+        source: winget
+        ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: 7zip
+      directives:
+        description: Install 7-Zip
+        securityContext: elevated
+      settings:
+        id: 7zip.7zip
+        source: winget
+        ensure: Present
