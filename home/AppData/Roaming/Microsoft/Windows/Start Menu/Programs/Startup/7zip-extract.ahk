@@ -1,8 +1,8 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
-; Strg+Alt+X im Explorer: markierte Archive mit 7-Zip nach "<Archivname>\" entpacken,
-; wie "Entpacken nach ..." im 7-Zip-Kontextmenü.
+; Ctrl+Alt+X in Explorer: extract selected archives with 7-Zip to "<archive name>\",
+; like "Extract to ..." in the 7-Zip context menu.
 
 SevenZip := "C:\Program Files\7-Zip\7zG.exe"
 ArchiveExtensions := ["zip", "7z", "rar", "tar", "gz", "tgz", "bz2", "xz"]
@@ -10,7 +10,7 @@ ArchiveExtensions := ["zip", "7z", "rar", "tar", "gz", "tgz", "bz2", "xz"]
 #HotIf WinActive("ahk_class CabinetWClass")
 ^!x:: {
     if !FileExist(SevenZip) {
-        MsgBox("7-Zip wurde nicht gefunden:`n" SevenZip, "7-Zip entpacken", "Icon!")
+        MsgBox("7-Zip not found:`n" SevenZip, "7-Zip extract", "Icon!")
         return
     }
     window := GetActiveExplorerTab(WinActive("A"))
@@ -22,7 +22,7 @@ ArchiveExtensions := ["zip", "7z", "rar", "tar", "gz", "tgz", "bz2", "xz"]
         SplitPath(path, , &dir, &ext, &nameNoExt)
         if !IsArchive(ext)
             continue
-        ; Kein Backslash am Ende von -o, sonst maskiert er das schließende Anführungszeichen
+        ; No trailing backslash in -o, otherwise it escapes the closing quote
         Run('"' SevenZip '" x "' path '" -o"' dir '\' nameNoExt '"')
     }
 }
@@ -35,7 +35,7 @@ IsArchive(ext) {
     return false
 }
 
-; Liefert das Explorer-Fenster des aktiven Tabs (Windows 11 hat mehrere Tabs pro Fenster).
+; Returns the Explorer window of the active tab (Windows 11 has multiple tabs per window).
 GetActiveExplorerTab(hwnd) {
     activeTab := 0
     try activeTab := ControlGetHwnd("ShellTabWindowClass1", hwnd)

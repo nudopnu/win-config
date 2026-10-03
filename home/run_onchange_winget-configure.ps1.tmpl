@@ -1,0 +1,2 @@
+# configuration.winget hash: {{ include "configuration.winget" | sha256sum }}
+winget configure -f "{{ joinPath .chezmoi.sourceDir "configuration.winget" }}" --accept-configuration-agreements

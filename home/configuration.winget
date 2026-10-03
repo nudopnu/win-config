@@ -68,7 +68,7 @@ properties:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: chezmoi
       directives:
-        description: chezmoi installieren
+        description: Install chezmoi
       settings:
         id: twpayne.chezmoi
         source: winget
