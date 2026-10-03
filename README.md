@@ -6,6 +6,9 @@ My goto tools for Windows, managed as a [chezmoi](https://www.chezmoi.io/) repo.
 ```ps
 winget install twpayne.chezmoi
 chezmoi init --apply https://github.com/nudopnu/win-config.git
+
+# on updates:
+chezmoi update
 ```
 
 Or use an existing local clone as chezmoi source by adding this to `~/.config/chezmoi/chezmoi.toml`:
