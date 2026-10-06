@@ -1,0 +1,53 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+alt+k",
+        "command": "gotoNextPreviousMember.previousMember",
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "gotoNextPreviousMember.nextMember",
+    },
+    {
+        "key": "ctrl+alt+m",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "explorer.newFile"
+    },
+    {
+        "key": "alt+j",
+        "command": "editor.action.moveLinesDownAction"
+    },
+    {
+        "key": "alt+k",
+        "command": "editor.action.moveLinesUpAction"
+    },
+    {
+        "key": "alt+shift+j",
+        "command": "editor.action.copyLinesDownAction"
+    },
+    {
+        "key": "alt+shift+k",
+        "command": "editor.action.copyLinesUpAction"
+    },
+    {
+        "key": "alt+shift+h",
+        "command": "editor.action.smartSelect.shrink"
+    },
+    {
+        "key": "alt+shift+l",
+        "command": "editor.action.smartSelect.expand"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.terminal.accessibleBufferGoToNextCommand",
+        "when": "accessibleViewIsShown && accessibleViewCurrentProviderId == 'terminal' || accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    }
+]

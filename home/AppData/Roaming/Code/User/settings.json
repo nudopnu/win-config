@@ -1,0 +1,94 @@
+{
+	"vim.sneak": true,
+	"vim.leader": "<space>",
+	"vim.handleKeys": {
+    "<C-p>": false,
+    "<C-w>": false,
+    "<C-a>": false,
+    "<C-k>": false,
+    "<C-d>": false,
+    "<C-n>": false,
+    "<C-f>": false,
+    "<C-c>": false,
+    "<C-x>": false,
+    "<C-y>": false,
+  },
+	"vim.insertModeKeyBindings": [
+      {
+          "before": ["j", "k"],
+          "after": ["<Esc>"],
+          "when": "!suggestWidgetVisible"
+      },
+  ],
+  "vim.visualModeKeyBindings": [
+      {
+          "before": ["q"],
+          "after": ["<Esc>"]
+      }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+         { "before": ["2", "O"], "after": ["O", "<Esc>", "O"] },
+         { "before": ["3", "O"], "after": ["O", "<Esc>", "O", "<Esc>", "O"] },
+         { "before": ["2", "o"], "after": ["o", "<Esc>", "o"] },
+         { "before": ["3", "o"], "after": ["o", "<Esc>", "o", "<Esc>", "o"] },
+         { "before": ["d", "o"], "after": ["d", "d", "k", "o"]},
+         { "before": ["g", "a"], "after": ["G", "A"]},
+         { "before": ["<Enter>"], "after": ["I", "<Enter>", "<Esc>"]},
+	      {
+            "before": [ "<leader>", "o" ],
+            "after": [ "m", "`", "o", "<Esc>", "`", "`" ]
+        },
+        {
+            "before": [ "<leader>", "O" ],
+            "after": [ "m", "`", "O", "<Esc>", "`", "`" ]
+        },
+	],
+	"vim.insertModeKeyBindingsNonRecursive": [
+		{
+			"before": ["<C-i>"],
+			"after": ["<Esc>", "v", "i", "W"]
+		},
+		{
+        "before": ["j", "k"],
+        "after": ["<Esc>"],
+        "when": "!suggestWidgetVisible"
+    },
+    ],
+    "workbench.iconTheme": "vscode-icons",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+            "args": [
+                "--login",
+                "-i"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "claudeCode.preferredLocation": "panel",
+    "workbench.colorTheme": "Dark Modern",
+    "git.blame.editorDecoration.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "json.schemaDownload.trustedDomains": {
+        "https://developer.microsoft.com/json-schemas/": true,
+        "https://json-schema.org/": true,
+        "https://json.schemastore.org/": true,
+        "https://raw.githubusercontent.com": true,
+        "https://raw.githubusercontent.com/devcontainers/spec/": true,
+        "https://raw.githubusercontent.com/microsoft/vscode/": true,
+        "https://schemastore.azurewebsites.net/": true,
+        "https://www.schemastore.org/": true
+    },
+}
