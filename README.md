@@ -40,3 +40,9 @@ Run elevated powershell here from git bash:
 ```bash
 powershell -NoProfile -Command "Start-Process powershell -Verb RunAs -ArgumentList \"-NoExit -Command cd '\$PWD'\""
 ```
+
+If the execution of PS1 scripts is not allowed:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
