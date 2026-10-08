@@ -115,3 +115,13 @@ properties:
         id: Microsoft.VisualStudioCode
         source: winget
         ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: imagemagick
+      directives:
+        description: Install ImageMagick
+        securityContext: elevated
+      settings:
+        id: ImageMagick.ImageMagick
+        source: winget
+        ensure: Present
