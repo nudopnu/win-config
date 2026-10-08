@@ -41,8 +41,18 @@ Run elevated powershell here from git bash:
 powershell -NoProfile -Command "Start-Process powershell -Verb RunAs -ArgumentList \"-NoExit -Command cd '\$PWD'\""
 ```
 
-If the execution of PS1 scripts is not allowed:
+## If the execution of PS1 scripts is not allowed
 
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+# sometimes needed:
+winget configure --enable
+```
+
+## If it didn't work and you need to restart
+
+```powershell
+chezmoi state reset
+chezmoi apply --force
 ```
