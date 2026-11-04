@@ -143,4 +143,5 @@ properties:
         Name: Path
         Value: 'C:\Program Files (x86)\Nmap'
         Ensure: Present
-        PathType: Machine
+        Target: Machine
+        Path: true
