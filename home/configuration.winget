@@ -134,3 +134,4 @@ properties:
         id: Insecure.Nmap
         source: winget
         ensure: Present
+        arguments: /S /REGISTERPATH=YES
