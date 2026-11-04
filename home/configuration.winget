@@ -134,4 +134,13 @@ properties:
         id: Insecure.Nmap
         source: winget
         ensure: Present
-        arguments: /S /REGISTERPATH=YES
+
+    - resource: PSDscResources/Environment
+      id: NmapPath
+      dependsOn:
+        - nmap
+      settings:
+        Name: Path
+        Value: 'C:\Program Files (x86)\Nmap'
+        Ensure: Present
+        PathType: Machine
