@@ -125,3 +125,12 @@ properties:
         id: ImageMagick.ImageMagick
         source: winget
         ensure: Present
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: nmap
+      directives:
+        description: Install nmap
+      settings:
+        id: Insecure.Nmap
+        source: winget
+        ensure: Present
