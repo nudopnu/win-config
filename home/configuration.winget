@@ -139,6 +139,9 @@ properties:
       id: NmapPath
       dependsOn:
         - nmap
+      directives:
+        description: Add Nmap to PATH
+        securityContext: elevated
       settings:
         Name: Path
         Value: 'C:\Program Files (x86)\Nmap'
