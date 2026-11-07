@@ -135,6 +135,15 @@ properties:
         source: winget
         ensure: Present
 
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: lua
+      directives:
+        description: Install lua
+      settings:
+        id: DEVCOM.Lua
+        source: winget
+        ensure: Present
+
     - resource: PSDscResources/Environment
       id: NmapPath
       dependsOn:
