@@ -124,3 +124,12 @@ properties:
         Ensure: Present
         Target: Machine
         Path: true
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: tailscale
+      directives:
+        description: Install tailscale
+      settings:
+        id: Tailscale.Tailscale
+        source: winget
+        ensure: Presents
