@@ -128,8 +128,9 @@ properties:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: tailscale
       directives:
-        description: Install tailscale
+        description: Install Tailscale
+        securityContext: elevated
       settings:
         id: Tailscale.Tailscale
         source: winget
-        ensure: Presents
+        ensure: Present
